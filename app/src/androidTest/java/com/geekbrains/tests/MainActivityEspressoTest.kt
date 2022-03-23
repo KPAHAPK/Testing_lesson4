@@ -40,6 +40,22 @@ class MainActivityEspressoTest {
         }
     }
 
+    @Test
+    fun activitySearch_start() {
+        with(onView(withId(R.id.toDetailsActivityButton))) {
+            check(matches(withText("to details")))
+            check(matches(isEnabled()))
+            check(matches(isDisplayed()))
+        }
+
+        with(onView(withId(R.id.searchEditText))) {
+            check(matches(withHint("Enter keyword e.g. android")))
+            check(matches(isDisplayed()))
+        }
+    }
+
+
+
     private fun delay(): ViewAction? {
         return object : ViewAction {
             override fun getConstraints(): Matcher<View> = isRoot()
