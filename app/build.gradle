@@ -5,6 +5,14 @@ plugins {
 }
 
 android {
+    signingConfigs {
+        'release' {
+            storeFile file('D:\\IT\\keys\\keyrelease.jks')
+            storePassword 'keyrelease'
+            keyAlias 'keyrelease'
+            keyPassword 'keyrelease'
+        }
+    }
     compileSdkVersion 30
     buildToolsVersion "30.0.2"
 
@@ -14,14 +22,20 @@ android {
         targetSdkVersion 30
         versionCode 1
         versionName "1.0"
-
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
     buildTypes {
         release {
+            signingConfig signingConfigs.release
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            buildConfigField "String", "TYPE", '"RELEASE"'
+
+        }
+        debug {
+            versionNameSuffix "-debug"
+            buildConfigField "String", "TYPE", '"DEBUG"'
         }
     }
     compileOptions {
@@ -37,16 +51,16 @@ android {
         }
     }
 
-    flavorDimensions "default"
+    flavorDimensions 'default'
     productFlavors {
         fake {
-            applicationIdSuffix ".fake"
-            versionNameSuffix "-fake"
+            applicationIdSuffix '.fake'
+            versionNameSuffix '-fake'
             buildConfigField "String", "TYPE", '"FAKE"'
         }
         real {
-            applicationIdSuffix ".real"
-            versionNameSuffix "-real"
+            applicationIdSuffix '.real'
+            versionNameSuffix '-real'
             buildConfigField "String", "TYPE", '"REAL"'
         }
     }
