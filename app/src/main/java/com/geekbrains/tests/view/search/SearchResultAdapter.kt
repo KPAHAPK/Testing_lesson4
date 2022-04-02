@@ -15,7 +15,7 @@ internal class SearchResultAdapter : RecyclerView.Adapter<SearchResultViewHolder
 
     override fun onCreateViewHolder(
         parent: ViewGroup,
-        viewType: Int
+        viewType: Int,
     ): SearchResultViewHolder {
         return SearchResultViewHolder(
             LayoutInflater.from(parent.context).inflate(R.layout.list_item, null)
@@ -24,7 +24,7 @@ internal class SearchResultAdapter : RecyclerView.Adapter<SearchResultViewHolder
 
     override fun onBindViewHolder(
         holder: SearchResultViewHolder,
-        position: Int
+        position: Int,
     ) {
         holder.bind(results[position])
     }

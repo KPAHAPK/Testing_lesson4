@@ -6,7 +6,7 @@ import com.geekbrains.tests.view.ViewContract
 internal interface ViewSearchContract : ViewContract {
     fun displaySearchResults(
         searchResults: List<SearchResult>,
-        totalCount: Int
+        totalCount: Int,
     )
 
     fun displayError()

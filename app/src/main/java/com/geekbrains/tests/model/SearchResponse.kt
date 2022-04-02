@@ -9,5 +9,5 @@ data class SearchResponse(
     val totalCount: Int?,
     @SerializedName("items")
     @Expose
-    val searchResults: List<SearchResult>?
+    val searchResults: List<SearchResult>?,
 )
