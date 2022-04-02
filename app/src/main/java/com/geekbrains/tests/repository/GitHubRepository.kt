@@ -10,21 +10,21 @@ internal class GitHubRepository(private val gitHubApi: GitHubApi) : RepositoryCo
 
     override fun searchGithub(
         query: String,
-        callback: RepositoryCallback
+        callback: RepositoryCallback,
     ) {
         val call = gitHubApi.searchGithub(query)
         call?.enqueue(object : Callback<SearchResponse?> {
 
             override fun onResponse(
                 call: Call<SearchResponse?>,
-                response: Response<SearchResponse?>
+                response: Response<SearchResponse?>,
             ) {
                 callback.handleGitHubResponse(response)
             }
 
             override fun onFailure(
                 call: Call<SearchResponse?>,
-                t: Throwable
+                t: Throwable,
             ) {
                 callback.handleGitHubError()
             }

@@ -67,23 +67,12 @@ class MainActivity : AppCompatActivity(), ViewSearchContract {
     }
 
     private fun createRepository(): RepositoryContract {
-        return if (BuildConfig.TYPE == FAKE) {
-            FakeGitHubRepository()
-        } else {
-            GitHubRepository(createRetrofit().create(GitHubApi::class.java))
-        }
-    }
-
-    private fun createRetrofit(): Retrofit {
-        return Retrofit.Builder()
-            .baseUrl(BASE_URL)
-            .addConverterFactory(GsonConverterFactory.create())
-            .build()
+        return FakeGitHubRepository()
     }
 
     override fun displaySearchResults(
         searchResults: List<SearchResult>,
-        totalCount: Int
+        totalCount: Int,
     ) {
         with(totalCountTextView) {
             visibility = View.VISIBLE
@@ -109,10 +98,5 @@ class MainActivity : AppCompatActivity(), ViewSearchContract {
         } else {
             progressBar.visibility = View.GONE
         }
-    }
-
-    companion object {
-        const val BASE_URL = "https://api.github.com"
-        const val FAKE = "FAKE"
     }
 }

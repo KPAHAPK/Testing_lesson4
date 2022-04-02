@@ -39,5 +39,5 @@ data class SearchResult(
     val archived: Boolean?,
     @SerializedName("score")
     @Expose
-    val score: Double?
+    val score: Double?,
 )

@@ -67,7 +67,7 @@ class MainActivityEspressoTest {
     }
 
     @Test
-    fun activitySearch_toDetailsActivityButton_isWorking(){
+    fun activitySearch_toDetailsActivityButton_isWorking() {
         onView(withId(R.id.toDetailsActivityButton)).perform(click())
 
         Intents.init()

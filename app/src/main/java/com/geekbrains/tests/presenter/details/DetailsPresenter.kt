@@ -4,7 +4,7 @@ import com.geekbrains.tests.view.details.ViewDetailsContract
 
 internal class DetailsPresenter internal constructor(
     private val viewContract: ViewDetailsContract,
-    private var count: Int = 0
+    private var count: Int = 0,
 ) : PresenterDetailsContract {
 
     override fun setCounter(count: Int) {
