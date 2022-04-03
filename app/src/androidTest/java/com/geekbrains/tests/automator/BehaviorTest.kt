@@ -51,8 +51,8 @@ class BehaviorTest {
         val editText = uiDevice.findObject(By.res(packageName, "searchEditText"))
         editText.text = "UiAutomator"
 
-        Espresso.onView(ViewMatchers.withId(R.id.searchEditText))
-            .perform(ViewActions.pressImeActionButton())
+        val btnSearch = uiDevice.findObject(By.res(packageName, "btn_search"))
+        btnSearch.click()
 
         val changedText = uiDevice.wait(Until.findObject(By.res(packageName, "totalCountTextView")),
             TIMEOUT)
