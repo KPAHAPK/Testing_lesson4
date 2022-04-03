@@ -2,17 +2,15 @@ package com.geekbrains.tests.automator
 
 import android.content.Context
 import android.content.Intent
+import android.util.Log
 import androidx.test.core.app.ApplicationProvider
-import androidx.test.espresso.Espresso
-import androidx.test.espresso.action.ViewActions
-import androidx.test.espresso.matcher.ViewMatchers
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.filters.SdkSuppress
 import androidx.test.platform.app.InstrumentationRegistry.getInstrumentation
 import androidx.test.uiautomator.By
 import androidx.test.uiautomator.UiDevice
+import androidx.test.uiautomator.UiObject2
 import androidx.test.uiautomator.Until
-import com.geekbrains.tests.R
 import org.junit.Assert
 import org.junit.Before
 import org.junit.Test
@@ -61,8 +59,30 @@ class BehaviorTest {
 
     @Test
     fun test_OpenDetailsScreen(): Unit {
-        val toDetails = uiDevice.findObject(By.res(packageName, "toDetailsActivityButton"))
-        toDetails.click()
+        val editText = uiDevice.findObject(By.res(packageName, "searchEditText"))
+        editText.text = "UiAutomator"
 
+        val btnSearch = uiDevice.findObject(By.res(packageName, "btn_search"))
+        btnSearch.click()
+
+        val textView: UiObject2 =
+            uiDevice.wait(Until.findObject(By.res(packageName, "totalCountTextView")),
+                TIMEOUT)
+        val amountOfRepositories = textView.text.toString().filter { it.isDigit() }
+
+        val toDetails: UiObject2 =
+            uiDevice.findObject(By.res(packageName, "toDetailsActivityButton"))
+        toDetails.clickAndWait(Until.newWindow(), 5000L)
+
+        val detailsTextView = uiDevice.findObject(By.res(packageName, "totalCountTextView"))
+        val detailsScreenAmountOfRepositories =
+            detailsTextView.text.toString().filter { it.isDigit() }
+        Log.d("UIAutomator", detailsScreenAmountOfRepositories)
+        Assert.assertEquals(detailsScreenAmountOfRepositories, amountOfRepositories)
     }
+
+//    @Test
+//    fun test_DetailsScreenIncrementButton(){
+//        val btn
+//    }
 }
