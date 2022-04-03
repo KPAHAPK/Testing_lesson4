@@ -81,8 +81,4 @@ class BehaviorTest {
         Assert.assertEquals(detailsScreenAmountOfRepositories, amountOfRepositories)
     }
 
-//    @Test
-//    fun test_DetailsScreenIncrementButton(){
-//        val btn
-//    }
 }
