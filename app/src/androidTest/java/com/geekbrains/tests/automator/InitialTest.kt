@@ -18,7 +18,7 @@ class InitialTest {
     private val packageName = context.packageName
 
     @Test
-    fun text_DeviceNotNull(){
+    fun test_DeviceNotNull(){
         val uiDevice: UiDevice = UiDevice.getInstance(getInstrumentation())
         Assert.assertNotNull(uiDevice)
     }
