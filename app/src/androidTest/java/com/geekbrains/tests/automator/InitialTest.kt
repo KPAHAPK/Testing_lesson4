@@ -22,4 +22,15 @@ class InitialTest {
         val uiDevice: UiDevice = UiDevice.getInstance(getInstrumentation())
         Assert.assertNotNull(uiDevice)
     }
+
+    @Test
+    fun test_AppPackageNotNull(){
+        Assert.assertNotNull(packageName)
+    }
+
+    @Test
+    fun test_MainActivityIntentNotNull(): Unit {
+        val intent = context.packageManager.getLaunchIntentForPackage(packageName)
+        Assert.assertNotNull(intent)
+    }
 }
