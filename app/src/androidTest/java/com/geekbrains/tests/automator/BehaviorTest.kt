@@ -56,7 +56,7 @@ class BehaviorTest {
 
         val changedText = uiDevice.wait(Until.findObject(By.res(packageName, "totalCountTextView")),
             TIMEOUT)
-        Assert.assertEquals(changedText.text.toString(), "Number of result: 668")
+        Assert.assertEquals(changedText.text.toString(), "Number of results: 701")
     }
 
     @Test
