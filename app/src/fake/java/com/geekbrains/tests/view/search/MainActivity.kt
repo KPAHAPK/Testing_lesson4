@@ -8,6 +8,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.geekbrains.tests.BuildConfig
 import com.geekbrains.tests.R
+import com.geekbrains.tests.TOTAL_COUNT
 import com.geekbrains.tests.model.SearchResult
 import com.geekbrains.tests.presenter.RepositoryContract
 import com.geekbrains.tests.presenter.search.PresenterSearchContract
@@ -25,7 +26,7 @@ class MainActivity : AppCompatActivity(), ViewSearchContract {
 
     private val adapter = SearchResultAdapter()
     private val presenter: PresenterSearchContract = SearchPresenter(this, createRepository())
-    private var totalCount: Int = 0
+    private var totalCount: Int = TOTAL_COUNT
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

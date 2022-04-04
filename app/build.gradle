@@ -65,6 +65,15 @@ android {
             buildConfigField "String", "TYPE", '"REAL"'
         }
     }
+
+    sourceSets {
+        fake {
+            java.srcDirs += "src/sharedData/java"
+        }
+        real{
+            java.srcDirs += "src/sharedData/java"
+        }
+    }
 }
 
 dependencies {
