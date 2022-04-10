@@ -1,10 +1,8 @@
 package com.geekbrains.tests.repository
 
 import com.geekbrains.tests.model.SearchResponse
-import com.geekbrains.tests.model.SearchResult
 import com.geekbrains.tests.presenter.RepositoryContract
 import io.reactivex.Observable
-import io.reactivex.Scheduler
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 import retrofit2.Call

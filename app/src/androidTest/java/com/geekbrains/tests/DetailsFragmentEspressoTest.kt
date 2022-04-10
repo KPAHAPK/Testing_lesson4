@@ -7,12 +7,12 @@ import androidx.lifecycle.Lifecycle
 import androidx.test.espresso.Espresso
 import androidx.test.espresso.Espresso.onView
 import androidx.test.espresso.action.ViewActions.click
-import androidx.test.ext.junit.runners.AndroidJUnit4
-import com.geekbrains.tests.view.details.DetailsFragment
 import androidx.test.espresso.assertion.ViewAssertions.matches
 import androidx.test.espresso.matcher.ViewMatchers
 import androidx.test.espresso.matcher.ViewMatchers.withId
 import androidx.test.espresso.matcher.ViewMatchers.withText
+import androidx.test.ext.junit.runners.AndroidJUnit4
+import com.geekbrains.tests.view.details.DetailsFragment
 import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -23,7 +23,7 @@ class DetailsFragmentEspressoTest {
     private lateinit var scenario: FragmentScenario<DetailsFragment>
 
     @Before
-    fun setUp(){
+    fun setUp() {
         scenario = launchFragmentInContainer()
     }
 
@@ -40,8 +40,7 @@ class DetailsFragmentEspressoTest {
 
     @Test
     fun fragment_testSetCountMethod(): Unit {
-        scenario.onFragment {
-            fragment ->
+        scenario.onFragment { fragment ->
             fragment.setCount(10)
         }
         val assertion = matches(withText("Number of results: 10"))

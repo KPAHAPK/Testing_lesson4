@@ -2,14 +2,12 @@ package com.geekbrains.tests.automator
 
 import android.content.Context
 import android.content.Intent
-import android.util.Log
 import androidx.test.core.app.ApplicationProvider
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.filters.SdkSuppress
 import androidx.test.platform.app.InstrumentationRegistry.getInstrumentation
 import androidx.test.uiautomator.By
 import androidx.test.uiautomator.UiDevice
-import androidx.test.uiautomator.UiObject2
 import androidx.test.uiautomator.Until
 import org.junit.Assert
 import org.junit.Before
@@ -24,7 +22,8 @@ class DetailsTest {
     private val uiDevice = UiDevice.getInstance(getInstrumentation())
     private val context = ApplicationProvider.getApplicationContext<Context>()
     private val packageName = context.packageName
-    companion object{
+
+    companion object {
         private const val TIMEOUT = 5000L
     }
 
@@ -51,6 +50,7 @@ class DetailsTest {
         Assert.assertEquals(textView.text.toString(),
             "Number of results: ${amountOfRepositories.toInt() + 1}")
     }
+
     @Test
     fun test_DetailsScreenDecrementButton() {
         val textView = uiDevice.findObject(By.res(packageName, "totalCountTextView"))

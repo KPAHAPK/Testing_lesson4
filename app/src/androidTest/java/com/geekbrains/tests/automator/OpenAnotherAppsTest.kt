@@ -26,7 +26,8 @@ class OpenAnotherAppsTest {
 //            uiDevice.displayHeight - 1250,
 //            10)
         val appViews = UiScrollable(UiSelector().scrollable(false))
-        val settingsApp = appViews.getChildByText(UiSelector().className(TextView::class.java), "Settings")
+        val settingsApp =
+            appViews.getChildByText(UiSelector().className(TextView::class.java), "Settings")
         settingsApp.clickAndWaitForNewWindow()
 
 //        val settingsValidation = uiDevice.findObject(UiSelector().packageName("com.android.settings"))

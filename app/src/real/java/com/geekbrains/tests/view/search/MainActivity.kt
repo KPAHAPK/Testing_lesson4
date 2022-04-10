@@ -6,8 +6,8 @@ import android.view.inputmethod.EditorInfo
 import android.widget.TextView.OnEditorActionListener
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.geekbrains.tests.TOTAL_COUNT
 import com.geekbrains.tests.R
+import com.geekbrains.tests.TOTAL_COUNT
 import com.geekbrains.tests.model.SearchResult
 import com.geekbrains.tests.presenter.RepositoryContract
 import com.geekbrains.tests.presenter.search.PresenterSearchContract
@@ -40,7 +40,7 @@ class MainActivity : AppCompatActivity(), ViewSearchContract {
         setRecyclerView()
 
         btn_search.setOnClickListener {
-            if (searchEditText.text.isNotBlank()){
+            if (searchEditText.text.isNotBlank()) {
                 val query = searchEditText.text.toString()
                 presenter.searchGitHub(query)
             } else {

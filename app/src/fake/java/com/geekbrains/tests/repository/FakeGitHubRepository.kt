@@ -11,10 +11,11 @@ internal class FakeGitHubRepository : RepositoryContract {
 
     override fun searchGithub(
         query: String,
-        callback: RepositoryCallback
+        callback: RepositoryCallback,
     ) {
         callback.handleGitHubResponse(Response.success(getFakeResponse()))
     }
+
     private fun getFakeResponse(): SearchResponse {
         val list: MutableList<SearchResult> = mutableListOf()
         for (index in 1..100) {

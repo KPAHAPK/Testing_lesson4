@@ -1,4 +1,5 @@
 package com.geekbrains.tests.view.details
+
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
@@ -17,6 +18,7 @@ class DetailsActivity : AppCompatActivity() {
             )
             .commitAllowingStateLoss()
     }
+
     companion object {
         private const val TOTAL_COUNT_EXTRA = "TOTAL_COUNT_EXTRA"
         fun getIntent(context: Context, totalCount: Int): Intent {
