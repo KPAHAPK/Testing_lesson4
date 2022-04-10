@@ -11,4 +11,6 @@ interface RepositoryContract {
     )
 
     fun searchGithub(query: String): Observable<SearchResponse>
+
+    suspend fun searchGithubAsync(query: String): SearchResponse
 }
