@@ -17,5 +17,6 @@ internal interface GitHubApi {
     @GET("search/repositories")
     fun searchGithub(@Query("q") term: String?): Call<SearchResponse?>?
 
+    @GET("search/repositor")
     fun searchGithubRx(@Query("q") term: String?): Observable<SearchResponse>
 }

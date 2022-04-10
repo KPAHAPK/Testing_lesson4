@@ -6,6 +6,7 @@ import android.view.inputmethod.EditorInfo
 import android.widget.TextView.OnEditorActionListener
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.ViewModelProvider
 import com.geekbrains.tests.R
 import com.geekbrains.tests.TOTAL_COUNT
 import com.geekbrains.tests.model.SearchResult
@@ -24,7 +25,7 @@ class MainActivity : AppCompatActivity(), ViewSearchContract {
 
     private val adapter = SearchResultAdapter()
     private val viewModel: SearchViewModel by lazy {
-        androidx.lifecycle.ViewModelProvider(this).get(SearchViewModel::class.java)
+        ViewModelProvider(this).get(SearchViewModel::class.java)
     }
     private var totalCount: Int = TOTAL_COUNT
 
