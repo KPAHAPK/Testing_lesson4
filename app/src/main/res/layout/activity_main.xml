@@ -51,9 +51,9 @@
         android:id="@+id/btn_search"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/btn_search"
         android:layout_marginTop="@dimen/margin"
-        app:layout_constraintTop_toBottomOf="@id/totalCountTextView"/>
+        android:text="@string/btn_search"
+        app:layout_constraintTop_toBottomOf="@id/totalCountTextView" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"

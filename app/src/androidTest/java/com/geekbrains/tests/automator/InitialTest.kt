@@ -13,18 +13,18 @@ import org.junit.runner.RunWith
 @RunWith(AndroidJUnit4::class)
 @SdkSuppress(minSdkVersion = 18)
 class InitialTest {
-    private val  context = ApplicationProvider.getApplicationContext<Context>()
+    private val context = ApplicationProvider.getApplicationContext<Context>()
 
     private val packageName = context.packageName
 
     @Test
-    fun test_DeviceNotNull(){
+    fun test_DeviceNotNull() {
         val uiDevice: UiDevice = UiDevice.getInstance(getInstrumentation())
         Assert.assertNotNull(uiDevice)
     }
 
     @Test
-    fun test_AppPackageNotNull(){
+    fun test_AppPackageNotNull() {
         Assert.assertNotNull(packageName)
     }
 
